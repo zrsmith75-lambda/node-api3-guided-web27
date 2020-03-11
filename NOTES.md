@@ -8,3 +8,14 @@
 1. create function with req,res,next
 2. make sure you use the middleware
 3. use in the endpoint
+
+- passing informtion to the middleware
+
+addName('bob')
+
+function addName(name) {
+return function (req, res, next) {
+req.name = name
+next()
+}
+}
